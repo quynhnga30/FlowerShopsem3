@@ -1,0 +1,29 @@
+﻿@model Ictshop.Models.Hedieuhanh
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@{ var u = Session["use"] as Ictshop.Models.Nguoidung;
+    if (u.IDQuyen == 2)
+    {
+        <h2>Detail Flower</h2>
+
+        <div>
+            <h4>Flower </h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Tenhdh)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Tenhdh)
+                </dd>
+
+            </dl>
+        </div>
+        <button> @Html.ActionLink("Edit ", "Edit", new { id = Model.Mahdh }) </button>
+        }
+    }
+
